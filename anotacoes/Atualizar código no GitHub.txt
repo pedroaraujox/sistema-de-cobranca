@@ -1,0 +1,9 @@
+Atualizar código no GitHub:
+
+git add .  ( add tudo ) 
+
+git commit -m "Commit inicial"
+
+
+git push -u origin main
+
