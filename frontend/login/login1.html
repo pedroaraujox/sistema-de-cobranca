@@ -12,25 +12,65 @@
 <body>
     
     <div class="wrapper">
+        <span class="bg-animate"></span>
+        <span class="bg-animate2"></span>
+
+
         <div class="form-box login">
-            <h2>Login</h2>
+            <h2 class="animation">Login</h2>
             <form action="../dashboard-cadastro/dashboard-cadastro.html">
+                <div class="input-box animation">
+                    <input type="text" required>
+                    <label>Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation">
+                    <input type="password" required>
+                    <label>password</label>
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+                <button type="submit" class="btn animation">Login</button>
+                <div class="logreg-link animation">
+                    <p>Não tem uma conta? <a href="#" class="register-link">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="info-text login">
+            <h2>Welcome Back!</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum</p>
+        </div>
+
+        <div class="form-box register">
+            <h2>Sign Up</h2>
+            <form action="#">
                 <div class="input-box">
                     <input type="text" required>
                     <label>Username</label>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
+                    <input type="text" required>
+                    <label>Email</label>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box">
                     <input type="password" required>
-                    <label>password</label>
+                    <label>Password</label>
                     <i class='bx bxs-lock-alt' ></i>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn">Sign Up</button>
                 <div class="logreg-link">
-                    <p>Não tem uma conta? <a href="#" class="register-link">Sign Up</a></p>
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
                 </div>
             </form>
         </div>
+
+        <div class="info-text register">
+            <h2>Welcome Back!</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum</p>
+        </div>
     </div>
+
+    <script src="script.js"></script> <!-- Link para o arquivo JavaScript, se necessário -->
 </body>
 </html>
