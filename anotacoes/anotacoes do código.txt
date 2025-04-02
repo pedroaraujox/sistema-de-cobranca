@@ -11,4 +11,4 @@ git push -u origin main
 
 Pagina de login:
 
-9:30
+29:00
