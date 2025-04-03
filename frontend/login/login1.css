@@ -136,7 +136,7 @@ body{
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    font: size 18px;
+    font-size: 18px;
     color: #fff;
     transition: .5s;
 }
