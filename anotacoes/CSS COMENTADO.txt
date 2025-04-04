@@ -1,0 +1,341 @@
+/* Importa a fonte Poppins do Google Fonts com diversos pesos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reset global de estilos */
+* {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove paddings padrão */
+    box-sizing: border-box; /* Faz padding e border serem incluídos no width/height */
+    font-family: Poppins, sans-serif; /* Define Poppins como fonte padrão com fallback para sans-serif */
+}
+
+/* Estilos do corpo da página */
+body {
+    display: flex; /* Ativa o modelo flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Altura mínima igual à altura da viewport */
+    background: #081b29; /* Cor de fundo azul escuro */
+}
+
+/* Container principal */
+.wrapper {
+    position: relative; /* Permite posicionamento absoluto dos filhos */
+    width: 750px; /* Largura fixa */
+    height: 450px; /* Altura fixa */
+    background: transparent; /* Fundo transparente */
+    border: 2px solid #0ef; /* Borda azul ciano */
+    box-shadow: 0 0 25px #0ef; /* Sombra azul ciano */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa os limites */
+}
+
+/* Estilo base para as caixas de formulário */
+.wrapper .form-box {
+    position: absolute; /* Posicionamento absoluto */
+    top: 0; /* Alinhado no topo */
+    width: 50%; /* Ocupa metade da largura */
+    height: 100%; /* Altura total */
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Itens em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+}
+
+/* Estilos específicos para o formulário de login */
+.wrapper .form-box.login {
+    left: 0; /* Alinhado à esquerda */
+    padding: 0 60px 0 40px; /* Espaçamento interno assimétrico */
+}
+
+/* Animação para elementos do login */
+.wrapper .form-box.login .animation {
+    transform: translateX(0); /* Posição inicial */
+    opacity: 1; /* Totalmente visível */
+    filter: blur(0); /* Sem desfoque */
+    transition: .7s ease; /* Transição suave */
+    transition-delay: calc(.1s * var(--j)); /* Atraso baseado em variável CSS */
+}
+
+/* Estado "ativo" do formulário de login */
+.wrapper.active .form-box.login .animation {
+    transform: translateX(-120%); /* Move para fora à esquerda */
+    opacity: 0; /* Torna invisível */
+    filter: blur(10px); /* Aplica desfoque */
+    transition-delay: calc(.1s * var(--i)); /* Atraso diferente para animação de saída */
+}
+
+/* Estilos específicos para o formulário de registro */
+.wrapper .form-box.register {
+    right: 0; /* Alinhado à direita */
+    padding: 0 40px 0 60px; /* Espaçamento interno assimétrico */
+    pointer-events: none; /* Desativa interações inicialmente */
+}
+
+/* Estado "ativo" do formulário de registro */
+.wrapper.active .form-box.register {
+    pointer-events: auto; /* Reativa interações */
+}
+
+/* Animação para elementos do registro */
+.wrapper .form-box.register .animation {
+    transform: translateX(120%); /* Posição inicial (fora da tela) */
+    opacity: 0; /* Invisível */
+    filter: blur(10px); /* Desfocado */
+    transition: .7s ease; /* Transição suave */
+    transition-delay: calc(.1s * var(--j)); /* Atraso baseado em variável */
+}
+
+/* Estado "ativo" da animação de registro */
+.wrapper.active .form-box.register .animation {
+    transform: translateX(0); /* Move para posição normal */
+    opacity: 1; /* Torna visível */
+    filter: blur(0); /* Remove desfoque */
+    transition-delay: calc(.1s * var(--i)); /* Atraso diferente para entrada */
+}
+
+/* Estilos para títulos dos formulários */
+.form-box h2 {
+    font-size: 32px; /* Tamanho grande */
+    color: #fff; /* Texto branco */
+    text-align: center; /* Centralizado */
+}
+
+/* Container para campos de entrada */
+.form-box .input-box {
+    position: relative; /* Para posicionar elementos filhos */
+    width: 100%; /* Largura total */
+    height: 50px; /* Altura fixa */
+    margin: 25px 0; /* Espaçamento vertical */
+}
+
+/* Estilos para os campos de entrada */
+.input-box input {
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    background: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    outline: none; /* Remove contorno ao focar */
+    border-bottom: 2px solid #fff; /* Borda inferior branca */
+    padding-right: 23px; /* Espaço para o ícone */
+    font-size: 16px; /* Tamanho de fonte */
+    color: #fff; /* Texto branco */
+    font-weight: 500; /* Peso médio */
+    transition: .5s; /* Transição suave */
+}
+
+/* Estilos para campos focados/válidos */
+.input-box input:focus,
+.input-box input:valid {
+    border-bottom-color: #0ef; /* Borda inferior azul ciano */
+}
+
+/* Estilos para rótulos */
+.input-box label {
+    position: absolute; /* Posicionamento absoluto */
+    top: 50%; /* Alinhado verticalmente */
+    left: 0; /* Alinhado à esquerda */
+    transform: translateY(-50%); /* Ajuste fino de posição */
+    font-size: 16px; /* Tamanho de fonte */
+    color: #fff; /* Texto branco */
+    pointer-events: none; /* Não intercepta eventos do mouse */
+    transition: .5s; /* Transição suave */
+}
+
+/* Efeito para rótulos quando o campo tem foco/é válido */
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px; /* Move para cima */
+    color: #0ef; /* Muda cor para azul ciano */
+}
+
+/* Estilos para ícones */
+.input-box i {
+    position: absolute; /* Posicionamento absoluto */
+    top: 50%; /* Alinhado verticalmente */
+    right: 0; /* Alinhado à direita */
+    transform: translateY(-50%); /* Ajuste fino de posição */
+    font-size: 18px; /* Tamanho do ícone */
+    color: #fff; /* Cor branca */
+    transition: .5s; /* Transição suave */
+}
+
+/* Efeito para ícones quando o campo tem foco/é válido */
+.input-box input:focus~i,
+.input-box input:valid~i {
+    color: #0ef; /* Muda cor para azul ciano */
+}
+
+/* Estilos para botões */
+.btn {
+    position: relative; /* Para posicionar pseudo-elementos */
+    width: 100%; /* Largura total */
+    height: 45px; /* Altura fixa */
+    background: transparent; /* Fundo transparente */
+    border: 2px solid #0ef; /* Borda azul ciano */
+    outline: none; /* Remove contorno */
+    border-radius: 40px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro */
+    font-size: 16px; /* Tamanho de fonte */
+    color: #fff; /* Texto branco */
+    font-weight: 600; /* Peso da fonte */
+    z-index: 1; /* Camada superior */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa */
+}
+
+/* Efeito hover para botões */
+.btn::before {
+    content: ''; /* Pseudo-elemento necessário */
+    position: absolute; /* Posicionamento absoluto */
+    top: -100%; /* Inicia acima do botão */
+    left: 0; /* Alinhado à esquerda */
+    width: 100%; /* Largura total */
+    height: 300%; /* Altura extra para efeito */
+    background: linear-gradient(#081b29, #0ef, #081b29, #0ef); /* Gradiente complexo */
+    z-index: -1; /* Fica atrás do conteúdo */
+    transition: .5s; /* Transição suave */
+}
+
+/* Efeito quando o mouse está sobre o botão */
+.btn:hover::before {
+    top: 0; /* Mostra o gradiente */
+}
+
+/* Estilos para links de login/registro */
+.form-box .logreg-link {
+    font-size: 14.5px; /* Tamanho menor */
+    color: #fff; /* Texto branco */
+    text-align: center; /* Centralizado */
+    margin: 20px 0 10px; /* Espaçamento */
+}
+
+/* Estilos para links */
+.logreg-link p a {
+    color: #0ef; /* Azul ciano */
+    text-decoration: none; /* Sem sublinhado */
+    font-weight: 600; /* Peso da fonte */
+}
+
+/* Efeito hover para links */
+.logreg-link p a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+/* Estilos para textos informativos */
+.wrapper .info-text {
+    position: absolute; /* Posicionamento absoluto */
+    top: 0; /* Alinhado no topo */
+    width: 50%; /* Metade da largura */
+    height: 100%; /* Altura total */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Itens em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+}
+
+/* Estilos específicos para texto do login */
+.wrapper .info-text.login {
+    right: 0; /* Alinhado à direita */
+    text-align: right; /* Texto alinhado à direita */
+    padding: 0 40px 60px 150px; /* Espaçamento interno */
+}
+
+/* Animação para texto do login */
+.wrapper .info-text.login .animation {
+    transform: translateX(0); /* Posição inicial */
+    opacity: 1; /* Visível */
+    filter: blur(0); /* Sem desfoque */
+    transition: .7s ease; /* Transição suave */
+    transition-delay: calc(.1s * var(--j)); /* Atraso baseado em variável */
+}
+
+/* Estado "ativo" do texto do login */
+.wrapper.active .info-text.login .animation {
+    transform: translateX(120%); /* Move para fora à direita */
+    opacity: 0; /* Invisível */
+    filter: blur(10px); /* Desfocado */
+    transition-delay: calc(.1s * var(--i)); /* Atraso diferente */
+}
+
+/* Estilos específicos para texto do registro */
+.wrapper .info-text.register {
+    left: 0; /* Alinhado à esquerda */
+    text-align: left; /* Texto alinhado à esquerda */
+    padding: 0 150px 60px 40px; /* Espaçamento interno */
+    pointer-events: none; /* Desativa interações */
+}
+
+/* Estado "ativo" do texto do registro */
+.wrapper.active .info-text.register {
+    pointer-events: auto; /* Reativa interações */
+}
+
+/* Animação para texto do registro */
+.wrapper .info-text.register .animation {
+    transform: translateX(-120%); /* Posição inicial (fora à esquerda) */
+    opacity: 0; /* Invisível */
+    filter: blur(10px); /* Desfocado */
+    transition: .7s ease; /* Transição suave */
+    transition-delay: calc(.1s * var(--j)); /* Atraso baseado em variável */
+}
+
+/* Estado "ativo" da animação do texto de registro */
+.wrapper.active .info-text.register .animation {
+    transform: translateX(0); /* Posição normal */
+    opacity: 1; /* Visível */
+    filter: blur(0); /* Sem desfoque */
+    transition-delay: calc(.1s * var(--i)); /* Atraso diferente */
+}
+
+/* Estilos para títulos dos textos informativos */
+.info-text h2 {
+    font-size: 36px; /* Tamanho grande */
+    color: #fff; /* Texto branco */
+    line-height: 1.3; /* Espaçamento entre linhas */
+    text-transform: uppercase; /* Texto em maiúsculas */
+}
+
+/* Estilos para parágrafos dos textos informativos */
+.info-text p {
+    font-size: 16px; /* Tamanho normal */
+    color: #fff; /* Texto branco */
+}
+
+/* Elemento decorativo de fundo (animação 1) */
+.wrapper .bg-animate {
+    position: absolute; /* Posicionamento absoluto */
+    top: -4px; /* Ajuste fino de posição */
+    right: 0; /* Alinhado à direita */
+    width: 850px; /* Largura maior que o container */
+    height: 600px; /* Altura maior */
+    background: linear-gradient(45deg, #081b29, #0ef); /* Gradiente diagonal */
+    border-bottom: 3px solid #0ef; /* Borda inferior */
+    transform: rotate(10deg) skewY(40deg); /* Transformação inicial */
+    transform-origin: bottom right; /* Ponto de origem da transformação */
+    transition: 1.5s ease; /* Transição lenta */
+    transition-delay: 1.6s; /* Atraso longo */
+}
+
+/* Estado "ativo" da animação de fundo 1 */
+.wrapper.active .bg-animate {
+    transform: rotate(0) skewY(0); /* Volta ao estado normal */
+    transition-delay: .5s; /* Atraso menor */
+}
+
+/* Elemento decorativo de fundo (animação 2) */
+.wrapper .bg-animate2 {
+    position: absolute; /* Posicionamento absoluto */
+    top: 100%; /* Começa abaixo do container */
+    left: 250px; /* Posicionamento horizontal */
+    width: 850px; /* Largura grande */
+    height: 700px; /* Altura grande */
+    background: #081b29; /* Cor de fundo */
+    border-top: 3px solid #0ef; /* Borda superior */
+    transform: rotate(0) skewY(0); /* Estado inicial normal */
+    transform-origin: bottom left; /* Ponto de origem da transformação */
+    transition: 1.5s ease; /* Transição lenta */
+    transition-delay: .5s; /* Atraso médio */
+}
+
+/* Estado "ativo" da animação de fundo 2 */
+.wrapper.active .bg-animate2 {
+    transform: rotate(-11deg) skewY(-41deg); /* Aplica transformação */
+    transition-delay: 1.2s; /* Atraso maior */
+}
