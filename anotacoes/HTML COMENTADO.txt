@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- Define o tipo de documento como HTML5 -->
+<html lang="pt-br">
+<!-- Idioma principal da página (português do Brasil) -->
+<head>
+    <!-- Área de metadados e configurações do documento -->
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8 (suporta acentos e caracteres especiais) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Força o Internet Explorer a usar o motor de renderização mais recente -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a viewport para responsividade em dispositivos móveis -->
+    <title>Sistema de Cobrança - Login</title>
+    <!-- Título da página (aparece na aba do navegador) -->
+    <link rel="stylesheet" href="login.css">
+    <!-- Vincula a folha de estilos CSS externa -->
+    <link rel="icon" type="image/png" href="../login/imagens/logo.png" />
+    <!-- Define o favicon da página -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Importa a biblioteca de ícones Boxicons -->
+</head>
+<body>
+    <!-- Corpo visível da página -->
+    
+    <div class="wrapper">
+        <!-- Container principal que envolve todo o conteúdo -->
+        <span class="bg-animate"></span>
+        <!-- Elemento decorativo (provavelmente para animações de fundo) -->
+        <span class="bg-animate2"></span>
+        <!-- Segundo elemento decorativo de fundo -->
+
+        <!-- Formulário de Login -->
+        <div class="form-box login">
+            <h2 class="animation" style="--i:0; --j:21">Login</h2>
+            <!-- Título do formulário com classes para animação -->
+            <form action="../dashboard-cadastro/dashboard-cadastro.html">
+                <!-- Formulário com ação de redirecionamento -->
+                <div class="input-box animation" style="--i:1; --j:22">
+                    <!-- Container do campo de entrada com animação -->
+                    <input type="text" required>
+                    <!-- Campo de texto obrigatório para usuário -->
+                    <label>Usuário</label>
+                    <!-- Rótulo do campo -->
+                    <i class='bx bxs-user'></i>
+                    <!-- Ícone de usuário da biblioteca Boxicons -->
+                </div>
+                <div class="input-box animation" style="--i:2; --j:23">
+                    <input type="password" required>
+                    <!-- Campo de senha obrigatório -->
+                    <label>Senha</label>
+                    <i class='bx bxs-lock-alt' ></i>
+                    <!-- Ícone de cadeado -->
+                </div>
+                <button type="submit" class="btn animation" style="--i:3; --j:24">Login</button>
+                <!-- Botão de submit com animação -->
+                <div class="logreg-link animation" style="--i:4; --j:25">
+                    <!-- Container do link de registro -->
+                    <p>Não tem uma conta? <a href="#" class="register-link">Cadastre-se</a></p>
+                    <!-- Link para alternar para o formulário de cadastro -->
+                </div>
+            </form>
+        </div>
+
+        <!-- Texto informativo ao lado do formulário de login -->
+        <div class="info-text login">
+            <h2 class="animation" style="--i:0; --j:20">Welcome Back!</h2>
+            <p class="animation" style="--i:1; --j:21">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum</p>
+            <!-- Texto de exemplo (placeholder) -->
+        </div>
+
+        <!-- Formulário de Cadastro (inicialmente oculto) -->
+        <div class="form-box register">
+            <h2 class="animation" style="--i:17; --j:0">Cadastro</h2>
+            <form action="#">
+                <!-- Formulário sem ação definida (provavelmente manipulada via JS) -->
+                <div class="input-box animation" style="--i:18; --j:1"> >
+                    <input type="text" required>
+                    <label>Usuário</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--i:19; --j:2">
+                    <input type="email" required>
+                    <!-- Campo específico para e-mail -->
+                    <label>Email</label>
+                    <i class='bx bxs-envelope'></i>
+                    <!-- Ícone de envelope -->
+                </div>
+                <div class="input-box animation" style="--i:20; --j:3">
+                    <input type="password" required>
+                    <label>Senha</label>
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+                <button type="submit" class="btn animation" style="--i:21; --j:4">Cadastrar</button>
+                <div class="logreg-link animation" style="--i:22; --j:5">
+                    <p>Já tem uma conta? <a href="#" class="login-link">Login</a></p>
+                    <!-- Link para voltar ao formulário de login -->
+                </div>
+            </form>
+        </div>
+
+        <!-- Texto informativo ao lado do formulário de cadastro -->
+        <div class="info-text register ">
+            <h2 class="animation" style="--i:17; --j:0;">Welcome Back!</h2>
+            <p class="animation" style="--i:18; --j:1;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum</p>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+    <!-- Vincula o arquivo JavaScript que controla a lógica de alternância entre login/cadastro -->
+</body>
+</html>
