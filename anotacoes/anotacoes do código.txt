@@ -14,3 +14,8 @@ git push -u origin main
 Cores pagina login padrao:
 
 #081b29
+
+
+#Criei branchs separadas da main, na main é onde vai rodar o código em prod
+e para não dar problema nas alterações que formos fazermos, vamos add em outras branchs,
+após validação mandamos para a branch main ( principal )
